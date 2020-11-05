@@ -42,8 +42,8 @@ class RiderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg',
-            'flag'=> 'image|mimes:jpeg,png,jpg,gif,svg',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'flag'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'number' => 'required|unique:riders',
         ]);
 
