@@ -1,7 +1,7 @@
 @extends('layouts.html')
 
 @section('judul')
-    Add Team
+    Error
 @endsection
 
 @section('content')
@@ -19,8 +19,8 @@
             <ul class="navbar-nav mr-auto text-white">
                 <li><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li><a class="nav-link" href="/rider">Rider List</a></li>
-                <li><a class="nav-link active" href="/team">Teams List</a></li>
-                <li><a class="nav-link" href="/constructor">Constructor List</a></li>
+                <li><a class="nav-link" href="/team">Teams List</a></li>
+                <li><a class="nav-link active" href="/constructor">Constructor List</a></li>
                 @auth<li><a class="nav-link" href="/user">Users List</a></li>@endauth
                 <li><a class="nav-link" href="/author">Website Maker</a></li>
             </ul>
@@ -64,39 +64,9 @@
     </div>
 </nav>
 <br><br><br>
-<div class="container mt-5">
-    <h2 class="text-light graduate">Add Team</h2>
-    <form action="{{route('team.store')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group">
-            <label for="name" class="text-light">Team's Name :</label>
-            <input type="text" class="form-control" id="name" name="name">
-        </div>
-        <label for="engine" class="text-light">Constructor :</label>
-        <div class="form-group">
-            <select name="engine" class="custom-select">
-                @foreach ($constructors as $constructor)
-                    <option value="{{$constructor->id}}">{{$constructor->name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="principal" class="text-light">Principal :</label>
-            <input type="text" class="form-control" id="principal" name="principal">
-        </div>
-        <div class="form-group">
-            <label for="entry" class="text-light">Entry Year :</label>
-            <input type="text" class="form-control" id="entry" name="entry">
-        </div>
-        <div class="form-group">
-            <label form="logo" class="text-light">Upload Logo</label>
-            <input type="file" class="form-control-file text-light" id="logo" name="logo">
-        </div>
-        <div class="form-group">
-            <label form="bg_image" class="text-light">Upload Image for Card</label>
-            <input type="file" class="form-control-file text-light" id="bg_image" name="bg_image">
-        </div>
-        <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
-    </form>
-</div>
+    <div class="container mt-5">
+        <h2 class="text-center text-light">
+            Can't delete Constructor if they still got riders and teams wih them
+        </h2>
+    </div>
 @endsection

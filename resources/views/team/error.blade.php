@@ -1,7 +1,7 @@
 @extends('layouts.html')
 
 @section('judul')
-    Edit Constructor
+    Error
 @endsection
 
 @section('content')
@@ -64,40 +64,9 @@
     </div>
 </nav>
 <br><br><br>
-<div class="container mt-5">
-    <h2 class="text-light graduate">Edit Constructor</h2>
-    <form action="{{route('team.update', $team)}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="hidden" name="_method" value="PATCH">
-        <div class="form-group">
-            <label for="name" class="text-light">Constructor's Name :</label>
-            <input type="text" value="{{$team->name}}" class="form-control" id="name" name="name">
-        </div>
-        <label for="engine" class="text-light">Constructor :</label>
-        <div class="form-group">
-            <select name="engine" class="custom-select">
-                @foreach ($constructors as $constructor)
-                    <option value="{{$constructor->id}}">{{$constructor->name}}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="principal" class="text-light">Principal :</label>
-            <input type="text" value="{{$team->principal}}" class="form-control" id="principal" name="principal">
-        </div>
-        <div class="form-group">
-            <label for="entry" class="text-light">Entry Year :</label>
-            <input type="text" value="{{$team->entry}}"class="form-control" id="entry" name="entry">
-        </div>
-        <div class="form-group">
-            <label form="logo" class="text-light">Upload Logo</label>
-            <input type="file" class="form-control-file text-light" id="logo" name="logo">
-        </div>
-        <div class="form-group">
-            <label form="bg_image" class="text-light">Upload Image for Card</label>
-            <input type="file" class="form-control-file text-light" id="bg_image" name="bg_image">
-        </div>
-        <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
-    </form>
-</div>
+    <div class="container mt-5">
+        <h2 class="text-center text-light">
+            Can't delete Teams if they still got riders wih them
+        </h2>
+    </div>
 @endsection

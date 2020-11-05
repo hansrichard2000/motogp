@@ -37,7 +37,7 @@ class ConstructorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'logo' => 'image|mimes:jpeg,png,jpg,gif',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         $imgName = $request->logo->getClientOriginalName().'-'.time().'.'.$request->logo->extension();
@@ -121,7 +121,12 @@ class ConstructorController extends Controller
      */
     public function destroy(Constructor $constructor)
     {
-        $constructor->delete();
+        try {
+            $constructor->delete();
+        } catch (\Throwable $th) {
+            return view('constructor.error');
+        }
+
         return redirect()->back();
     }
 }

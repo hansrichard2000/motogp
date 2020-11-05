@@ -6,6 +6,8 @@ use App\Models\Team;
 use App\Models\Constructor;
 use Illuminate\Http\Request;
 
+use function Ramsey\Uuid\v1;
+
 class TeamController extends Controller
 {
     /**
@@ -40,8 +42,8 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'logo' => 'image|mimes:jpeg,png,jpg,gif',
-            'bg_image'=> 'image|mimes:jpeg,png,jpg,gif',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'bg_image'=> 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         $logoName = $request->logo->getClientOriginalName().'-'.time().'.'.$request->logo->extension();
@@ -159,7 +161,12 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        $team->delete();
+        try {
+            $team->delete();
+        } catch (\Throwable $th) {
+            return view('team.error');
+        }
+
         return redirect()->back();
     }
 }

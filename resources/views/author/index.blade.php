@@ -7,10 +7,10 @@
 @section('isi')
     <img src="{{asset('images/FotoKotak.jpg')}}" class="img-thumbnail profileImg rounded-circle">
     <div class="bg-dark text-light text-center mt-4 rounded p mx-auto pt-3 pb-3" style="width:30em">
-        <p>Nama : Hans Richard Alim Natadjaja</p>
-        <p>Asal Kota : Surabaya</p>
-        <p>Tanggal Lahir : 7 November 2000</p>
-        <p>Hobby : Catur</p>
+        <p>Name : Hans Richard Alim Natadjaja</p>
+        <p>City : Surabaya</p>
+        <p>Date of Birth : 7 November 2000</p>
+        <p>Hobby : Chess</p>
     </div>
 @endsection
 
@@ -25,10 +25,13 @@
 
         <div class="row">
             <div class="col text-justify">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A esse ea labore quia? Repellat, incidunt. Itaque dolore ab odio repellendus et quae consequatur veritatis, repellat provident nulla, veniam non praesentium? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ex, quas, ullam molestiae consequuntur labore voluptate quidem voluptatem voluptatum culpa quibusdam velit facilis beatae reprehenderit sunt voluptas. Esse, asperiores debitis!</p>
+                <p>Hans Richard Alim Natadjaja is a Technology Enthusiast who begin his journey in Informatics by learning Pascal at Senior High School. Right now he is a studeng at Ciputra University and learnt about web programming and programming technique in Android App.
+                    One of his creation is Students Assistant, which is an app to help students measure their assignents. He also made an online store website called futuresablon.com.
+                    Right now he is still learn and explore more about Web Development using Laravel and Mobile Apps Development using Android Studio. Natadjaja is looking forward to become a world-class developer who can make something that solve everyday's problem.
+                </p>
             </div>
             <div class="col text-justify">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita est sint, in eius, dolorem velit nemo suscipit accusamus tenetur repellat amet. Eveniet eum accusantium quam nihil earum! Laborum, accusantium dolorem.</p>
+                <p>Not just programming, Natadjaja also had interset in learn about chess and history.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores ullam sapiente id eum doloremque rem minima, hic nostrum nesciunt eos expedita. Magnam dolores consequuntur provident earum vitae nemo eum.</p>
             </div>
         </div>
