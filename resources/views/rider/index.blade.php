@@ -86,6 +86,7 @@
         <div class="row">
             @foreach ($riderChunk as $rider)
                 <div class="col mt-4">
+{{--                    {{dd($rider->group)}}--}}
                     <div class="card text-light text-left kartuRider">
                         <img class="gambarRider" src="/images/rider/{{$rider->picture}}" alt="Card image cap">
                         <div class="row">
