@@ -64,12 +64,12 @@
     </div>
 </nav>
 <div class="cover">
-    <div class="container">
-        <div class="inner">
-            <h1>Welcome at MotoGP 2020 Customized Website</h1>
-            <h3>This Website will give you the information about the rider and the teams of 2020 Season. Enjoy!</h3>
-        </div>
-    </div>
+{{--    <div class="container">--}}
+{{--        <div class="inner">--}}
+{{--            <h1>Welcome at MotoGP 2020 Customized Website</h1>--}}
+{{--            <h3>This Website will give you the information about the rider and the teams of 2020 Season. Enjoy!</h3>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
 <div class="jumbotron jumbotron-fluid bg-dark">
     <div class="container">
