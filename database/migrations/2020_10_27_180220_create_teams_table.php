@@ -20,7 +20,6 @@ class CreateTeamsTable extends Migration
             $table->foreign('engine')->references('id')->on('constructors');
             $table->string('principal');
             $table->string('entry');
-            $table->text('description');
             $table->text('logo')->nullable();
             $table->timestamps();
         });
