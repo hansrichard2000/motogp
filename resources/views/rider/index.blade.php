@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto text-white">
-                <li><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+                <li><a class="nav-link" href="/">Home</a></li>
                 <li><a class="nav-link active" href="/rider">Rider List</a></li>
                 <li><a class="nav-link" href="/team">Teams List</a></li>
                 <li><a class="nav-link" href="/constructor">Constructor List</a></li>
