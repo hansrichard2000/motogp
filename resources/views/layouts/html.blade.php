@@ -2,7 +2,7 @@
     <head>
         <title>@yield('judul')</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{!! asset('/css/main.css') !!}">
+        <link rel="stylesheet" type="text/css" href="{!! asset('/css/main.css?v=').time() !!}">
         <link rel="icon" sizes="16x16"type="image/png" href="https://static.motogp.com/riders-front/icons/favicon-16x16.png">
         <link rel="icon" sizes="32x32"type="image/png" href="https://static.motogp.com/riders-front/icons/favicon-32x32.png">
         <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
