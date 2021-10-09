@@ -22,6 +22,6 @@ class Team extends Model
     }
 
     public function crew(){
-        return $this->hasMany(Team::class, 'team', 'id');
+        return $this->hasMany(Rider::class, 'team', 'id');
     }
 }

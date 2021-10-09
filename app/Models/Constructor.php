@@ -17,7 +17,7 @@ class Constructor extends Model
     ];
 
     public function events(){
-        return $this->hasMany(Constructor::class, 'engine', 'id');
+        return $this->hasMany(Team::class, 'engine', 'id');
     }
 
 }
