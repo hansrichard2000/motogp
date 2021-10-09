@@ -24,11 +24,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto text-white">
-                        <li><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="/">Home</a></li>
                         <li><a class="nav-link" href="/rider">Rider List</a></li>
                         <li><a class="nav-link" href="/team">Teams List</a></li>
                         <li><a class="nav-link" href="/constructor">Constructor List</a></li>
-                        @auth<li><a class="nav-link" href="/user">Users List</a></li>@endauth
+                        @auth
+                            @if(\illuminate\Support\Facades\Auth::user()->isAdmin())
+                                <li><a class="nav-link" href="/user">Users List</a></li>
+                            @endif
+                        @endauth
                         <li><a class="nav-link active" href="/author">Website Maker</a></li>
                     </ul>
 

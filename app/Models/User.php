@@ -22,7 +22,10 @@ class User extends Authenticatable
         'email',
         'password',
         'role_id',
-
+        'is_login',
+        'is_active',
+        'is_verified',
+        'activation_token',
     ];
 
     /**
@@ -47,4 +50,24 @@ class User extends Authenticatable
     public function constructors(){
         return $this->hasMany(Constructor::class, 'created_by', 'id');
     }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+
+    public function isAdmin(){
+        if ($this->role->name == 'Admin' && $this->is_login == '1'){
+            return true;
+        }
+        return false;
+    }
+
+    public function isCreator(){
+        if ($this->role->name == 'Creator' && $this->is_login == '1'){
+            return true;
+        }
+        return false;
+    }
+
+
 }

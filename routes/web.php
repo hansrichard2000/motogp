@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ActivationController;
 use App\Http\Controllers\Web\RiderController;
 use App\Http\Controllers\Web\MotoGPController;
 use App\Http\Controllers\Web\TeamController;
@@ -24,6 +25,8 @@ Route::get('/', function(){
     return redirect()->route('motogp.index');
 });
 
+Route::get('activate', [ActivationController::class, 'activate'])->name('activate');
+
 Route::resource('motogp', MotoGPController::class);
 
 Route::resource('rider', RiderController::class);
@@ -32,7 +35,13 @@ Route::resource('team', TeamController::class);
 
 Route::resource('constructor', ConstructorController::class);
 
-Route::resource('user', UserController::class);
+Route::group([
+    'middleware' => 'admin',
+    'prefix' =>'admin',
+    'as' => 'admin.',
+], function (){
+    Route::resource('user', UserController::class);
+});
 
 Auth::routes();
 
