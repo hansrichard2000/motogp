@@ -1,9 +1,10 @@
 <?php
-use App\Http\Controllers\RiderController;
-use App\Http\Controllers\MotoGPController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\ConstructorController;
-use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\Web\RiderController;
+use App\Http\Controllers\Web\MotoGPController;
+use App\Http\Controllers\Web\TeamController;
+use App\Http\Controllers\Web\ConstructorController;
+use App\Http\Controllers\Web\UserController;
 use App\Models\Rider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;

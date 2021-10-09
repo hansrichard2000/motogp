@@ -14,10 +14,15 @@ class Constructor extends Model
         'nation',
         'engine',
         'logo',
+        'created_by'
     ];
 
     public function events(){
         return $this->hasMany(Team::class, 'engine', 'id');
+    }
+
+    public function creator(){
+        return $this->belongsTo(User::class, 'created_by', 'id');
     }
 
 }

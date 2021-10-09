@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use App\Models\Constructor;
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ConstructorController extends Controller
@@ -21,7 +23,7 @@ class ConstructorController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -49,6 +51,7 @@ class ConstructorController extends Controller
             'nation'=> $request->nation,
             'engine'=> $request->engine,
             'logo'=> $imgName,
+            'created_by' => $request->created_by,
         ]);
         return redirect()->route('constructor.index');
     }
