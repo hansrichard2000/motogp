@@ -4,7 +4,7 @@
         <title>@yield('judul')</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{!! asset('/css/author.css') !!}">
+        <link rel="stylesheet" type="text/css" href="{!! asset('/css/author.css?v=').time() !!}">
         <link rel="icon" sizes="16x16"type="image/png" href="https://static.motogp.com/riders-front/icons/favicon-16x16.png">
         <link rel="icon" sizes="32x32"type="image/png" href="https://static.motogp.com/riders-front/icons/favicon-32x32.png">
         <link rel="icon" type="image/png" href="{{asset('images/Moto_Gp_logo.svg.png')}}">
