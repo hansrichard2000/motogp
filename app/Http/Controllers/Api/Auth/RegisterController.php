@@ -34,9 +34,13 @@ class RegisterController extends Controller
     private function newUser(array $data)
     {
         return User::create([
-           "name" => $data['name'],
-           "email" => $data['email'],
-           "password" => Hash::make($data['password']),
+            "name" => $data['name'],
+            "email" => $data['email'],
+            "password" => Hash::make($data['password']),
+            'role_id' => 2,
+            'is_verified' => '1',
+            'is_login' => '0',
+            'is_active' => '1',
             "activation_token" => Str::random(20),
         ]);
     }

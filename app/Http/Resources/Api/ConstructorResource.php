@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Api\Admin;
+namespace App\Http\Resources\Api;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Constructor extends JsonResource
+class ConstructorResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,13 +14,12 @@ class Constructor extends JsonResource
      */
     public function toArray($request)
     {
-        return[
-            'id' => $this->id,
+        return [
             'name' => $this->name,
-            'description' => $this->description,
-            'nation' => $this->nation,
             'engine' => $this->engine,
+            'description' => $this->description,
             'logo' => $this->logo,
+            'created_by' => $this->creator->name,
         ];
     }
 }

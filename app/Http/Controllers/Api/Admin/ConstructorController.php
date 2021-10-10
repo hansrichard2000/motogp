@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\ConstructorResource;
+use App\Models\Constructor;
 use Illuminate\Http\Request;
 
 class ConstructorController extends Controller
@@ -14,17 +16,8 @@ class ConstructorController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $constructors = Constructor::all();
+        return ConstructorResource::collection($constructors);
     }
 
     /**
@@ -45,17 +38,6 @@ class ConstructorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
