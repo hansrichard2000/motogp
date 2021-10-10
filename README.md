@@ -12,5 +12,7 @@ This project based from Laravel framework which is open-sourced software license
     $ php artisan key:generate
     ```
 * setup .env file then run migrate command
-    `$ php artisan migrate --seed`
+    ```
+    $ php artisan migrate --seed
+    ```
 * Open in browser
