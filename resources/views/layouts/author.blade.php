@@ -30,7 +30,7 @@
                         <li><a class="nav-link" href="/constructor">Constructor List</a></li>
                         @auth
                             @if(\illuminate\Support\Facades\Auth::user()->isAdmin())
-                                <li><a class="nav-link" href="/user">Users List</a></li>
+                                <li><a class="nav-link" href={{route('admin.user.index')}}>Users List</a></li>
                             @endif
                         @endauth
                         <li><a class="nav-link active" href="/author">Website Maker</a></li>
