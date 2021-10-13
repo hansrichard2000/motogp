@@ -70,6 +70,7 @@ class RiderController extends Controller
             'description'=> $request->description,
             'picture'=> $imgRider,
             'flag'=> $imgFlag,
+            'created_by' => $request->created_by,
         ]);
         return redirect()->route('rider.index');
     }
@@ -156,6 +157,7 @@ class RiderController extends Controller
                 'description'=> $request->description,
                 'picture'=> $imgRider,
                 'flag'=> $imgFlag,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else if ($request->picture != null){
@@ -177,6 +179,7 @@ class RiderController extends Controller
                 'title'=> $request->title,
                 'description'=> $request->description,
                 'picture'=> $imgRider,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else if($request->flag !=null){
@@ -198,6 +201,7 @@ class RiderController extends Controller
                 'title'=> $request->title,
                 'description'=> $request->description,
                 'flag'=> $imgFlag,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else{
@@ -215,6 +219,7 @@ class RiderController extends Controller
                 'wins'=> $request->wins,
                 'title'=> $request->title,
                 'description'=> $request->description,
+                'updated_by' => $request->updated_by,
             ]);
         }
 

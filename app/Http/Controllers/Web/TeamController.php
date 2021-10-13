@@ -60,6 +60,7 @@ class TeamController extends Controller
             'entry'=> $request->entry,
             'logo'=> $logoName,
             'bg_image'=> $imgName,
+            'created_by' => $request->created_by,
         ]);
         return redirect()->route('team.index');
     }
@@ -117,6 +118,7 @@ class TeamController extends Controller
                 'entry'=> $request->entry,
                 'logo'=> $logoName,
                 'bg_image'=> $imgName,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else if($request->logo!=null){
@@ -129,6 +131,7 @@ class TeamController extends Controller
                 'engine'=> $request->engine,
                 'entry'=> $request->entry,
                 'logo'=> $logoName,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else if ($request->bg_image!=null){
@@ -141,6 +144,7 @@ class TeamController extends Controller
                 'engine'=> $request->engine,
                 'entry'=> $request->entry,
                 'bg_image'=> $imgName,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else{
@@ -149,6 +153,7 @@ class TeamController extends Controller
                 'principal' => $request->principal,
                 'engine'=> $request->engine,
                 'entry'=> $request->entry,
+                'updated_by' => $request->updated_by,
             ]);
         }
         return redirect()->route('team.index');

@@ -89,6 +89,7 @@
             <label form="logo" class="text-light">Upload Logo</label>
             <input type="file" class="form-control-file text-light" id="logo" name="logo">
         </div>
+        <input type="hidden" name="updated_by" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
         <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
     </form>
 </div>

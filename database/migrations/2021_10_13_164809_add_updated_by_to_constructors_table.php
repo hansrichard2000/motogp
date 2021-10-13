@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLogoAtConstructorTable extends Migration
+class AddUpdatedByToConstructorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,10 @@ class CreateLogoAtConstructorTable extends Migration
     public function up()
     {
         Schema::table('constructors', function (Blueprint $table) {
-            $table->binary('logo')->nullable()->index()->after('description');
+            $table->unsignedBigInteger('created_by')->nullable()->index()->after('logo');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('updated_by')->nullable()->index()->after('created_by');
+            $table->foreign('updated_by')->references('id')->on('users');
         });
     }
 
@@ -26,7 +29,8 @@ class CreateLogoAtConstructorTable extends Migration
     public function down()
     {
         Schema::table('constructors', function (Blueprint $table) {
-            $table->dropColumn('logo');
+            $table->dropColumn('created_by');
+            $table->dropColumn('updated_by');
         });
     }
 }

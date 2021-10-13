@@ -15,13 +15,23 @@ class Team extends Model
         'entry',
         'logo',
         'bg_image',
+        'created_by',
+        'updated_by',
     ];
 
-    public function creator(){
+    public function constructor(){
         return $this->belongsTo(Constructor::class, 'engine', 'id');
     }
 
     public function crew(){
         return $this->hasMany(Rider::class, 'team', 'id');
+    }
+
+    public function creator(){
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function updater(){
+        return $this->belongsTo(User::class, 'updated_by', 'id');
     }
 }

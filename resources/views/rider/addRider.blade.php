@@ -160,6 +160,7 @@
             <label form="flag" class="text-light">Nation Flag</label>
             <input type="file" class="form-control-file text-light" id="flag" name="flag">
         </div>
+        <input type="hidden" name="created_by" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
         <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
     </form>
 </div>

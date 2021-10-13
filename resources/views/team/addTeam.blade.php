@@ -96,6 +96,7 @@
             <label form="bg_image" class="text-light">Upload Image for Card</label>
             <input type="file" class="form-control-file text-light" id="bg_image" name="bg_image">
         </div>
+        <input type="hidden" name="created_by" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
         <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
     </form>
 </div>

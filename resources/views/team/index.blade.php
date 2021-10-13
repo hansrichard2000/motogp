@@ -96,7 +96,7 @@
                             <div class="col">
                                 <ul type="none">
                                     <li><strong>{{$team->name}}</strong></li>
-                                    <li>Constructor : {{$team->creator->name}}</li>
+                                    <li>Constructor : {{$team->constructor->name}}</li>
                                     <li>Principal : {{$team->principal}}</li>
                                     <li>Entry Year  : {{$team->entry}}</li>
                                 </ul>

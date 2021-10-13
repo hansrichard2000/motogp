@@ -14,7 +14,8 @@ class Constructor extends Model
         'nation',
         'engine',
         'logo',
-        'created_by'
+        'created_by',
+        'updated_by',
     ];
 
     public function events(){
@@ -23,6 +24,10 @@ class Constructor extends Model
 
     public function creator(){
         return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function updater(){
+        return $this->belongsTo(User::class, 'updated_by', 'id');
     }
 
 }

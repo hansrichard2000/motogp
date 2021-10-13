@@ -102,7 +102,8 @@ class ConstructorController extends Controller
                 'description'=> $request->description,
                 'nation'=> $request->nation,
                 'engine'=> $request->engine,
-                'logo' => $imgName
+                'logo' => $imgName,
+                'updated_by' => $request->updated_by,
             ]);
         }
         else{
@@ -111,6 +112,7 @@ class ConstructorController extends Controller
                 'description'=> $request->description,
                 'nation'=> $request->nation,
                 'engine'=> $request->engine,
+                'updated_by' => $request->updated_by,
             ]);
         }
         return redirect()->route('constructor.index');

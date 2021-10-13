@@ -15,6 +15,7 @@ class CreateLogoAgainInConstructTable extends Migration
     {
         Schema::table('constructors', function (Blueprint $table) {
             $table->text('logo')->nullable()->index()->after('description');
+
         });
     }
 
@@ -27,6 +28,7 @@ class CreateLogoAgainInConstructTable extends Migration
     {
         Schema::table('constructors', function (Blueprint $table) {
             $table->dropColumn('logo');
+
         });
     }
 }

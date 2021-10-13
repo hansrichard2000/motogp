@@ -18,7 +18,6 @@ class CreateConstructorsTable extends Migration
             $table->string('name');
             $table->string('nation');
             $table->text('description');
-            $table->text('logo')->nullable();
             $table->timestamps();
         });
     }

@@ -24,6 +24,8 @@ class Rider extends Model
         'description',
         'picture',
         'flag',
+        'created_by',
+        'updated_by',
     ]);
 
     public function creatorEngine(){
@@ -32,5 +34,13 @@ class Rider extends Model
 
     public function group(){
         return $this->belongsTo(Team::class, 'team', 'id');
+    }
+
+    public function creator(){
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function updater(){
+        return $this->belongsTo(User::class, 'updated_by', 'id');
     }
 }

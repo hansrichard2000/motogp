@@ -26,6 +26,7 @@ class User extends Authenticatable
         'is_active',
         'is_verified',
         'activation_token',
+
     ];
 
     /**
@@ -49,6 +50,14 @@ class User extends Authenticatable
 
     public function constructors(){
         return $this->hasMany(Constructor::class, 'created_by', 'id');
+    }
+
+    public function teams(){
+        return $this->hasMany(Team::class, 'created_by', 'id');
+    }
+
+    public function riders(){
+        return $this->hasMany(Rider::class, 'created_by', 'id');
     }
 
     public function role(){

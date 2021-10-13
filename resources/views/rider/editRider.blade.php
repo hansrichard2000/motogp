@@ -153,7 +153,6 @@
             <label for="description" class="text-light">Description : </label>
             <textarea rows="6" class="form-control" id="description" name="description">{{$rider->description}}</textarea>
         </div>
-        <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
         <div class="form-group">
             <label form="picture" class="text-light">Rider's Picture</label>
             <input type="file" class="form-control-file text-light" id="picture" name="picture">
@@ -162,9 +161,10 @@
             <label form="flag" class="text-light">Nation Flag</label>
             <input type="file" class="form-control-file text-light" id="flag" name="flag">
         </div>
+        <input type="hidden" name="updated_by" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
+        <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Submit">
     </form>
-    {{-- <form action="{{route('show_update_img', $rider, $team, $constructor)}}" method="GET">
-        <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Edit Rider with Image">
-    </form> --}}
+
+
 </div>
 @endsection
