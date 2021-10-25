@@ -38,7 +38,7 @@ class LoginController extends Controller
                 if ($check->is_login == '0'){
                     if (Auth::attempt($user)){
                         $this->isLogin(Auth::id());
-                        $response = Http::asForm()->post('http://motogp.test/oauth/token', [
+                        $response = Http::asForm()->post('http://motogp.technospire.web.id/oauth/token', [
                             'grant_type' => 'password',
                             'client_id' => $this->client->id,
                             'client_secret' => $this->client->secret,
@@ -84,7 +84,7 @@ class LoginController extends Controller
             'refresh_token' => 'refresh token is required',
         ]);
 
-        $response = Http::asForm()->post('http://motogp.test/oauth/token', [
+        $response = Http::asForm()->post('http://motogp.technospire.web.id/oauth/token', [
             'grant_type' => 'refresh_token',
             'refresh_token' => $request->refresh_token,
             'client_id' => $this->client->id,

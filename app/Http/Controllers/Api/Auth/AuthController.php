@@ -19,12 +19,12 @@ class AuthController extends Controller
 
         $query = http_build_query([
             'client_id' => $this->client->id,
-            'redirect_uri' => 'http://motogp.test/callback',
+            'redirect_uri' => 'http://motogp.technospire.web.id/callback',
             'response_type' => 'code',
             'scope' => '*',
             'state' => $state,
         ]);
 
-        return redirect('http://motogp.test/oauth/authorize?'.$query);
+        return redirect('http://motogp.technospire.web.id/oauth/authorize?'.$query);
     }
 }
