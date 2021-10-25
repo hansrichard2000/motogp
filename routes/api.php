@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\ConstructorController;
+use App\Http\Controllers\Api\Admin\RiderController;
+use App\Http\Controllers\Api\Admin\TeamController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
@@ -23,6 +25,8 @@ Route::post('api-login', [LoginController::class, 'login']);
 Route::post('api-refresh', [LoginController::class, 'refresh']);
 Route::get('redirect', [AuthController::class, 'redirect']);
 Route::apiResource('constructors', ConstructorController::class);
+Route::apiResource('teams', TeamController::class);
+Route::apiResource('riders', RiderController::class);
 
 Route::group(['middleware' => 'auth:api'], function (){
    Route::apiResource('constructors', ConstructorController::class);

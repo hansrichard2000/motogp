@@ -4,12 +4,8 @@ namespace App\Http\Resources\Api;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ConstructorResource extends JsonResource
+class RiderResource extends JsonResource
 {
-    /**
-     * @var mixed
-     */
-
     /**
      * Transform the resource into an array.
      *
@@ -20,10 +16,20 @@ class ConstructorResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'description' => $this->description,
+            'number' => $this->number,
+            'team' => $this->group->name,
+            'engine' => $this->creatorEngine->engine,
             'nation' => $this->nation,
-            'engine' => $this->engine,
-            'logo' => $this->logo,
+            'date' => $this->date,
+            'place' => $this->place,
+            'height' => $this->height,
+            'weight' => $this->weight,
+            'podiums' => $this->podiums,
+            'wins' => $this->wins,
+            'title' => $this->title,
+            'description' => $this->description,
+            'picture' => $this->picture,
+            'flag' => $this->flag,
             'created_by' => $this->creator->name,
             'updated_by' => $this->updater ? $this->updater->name : '-',
         ];

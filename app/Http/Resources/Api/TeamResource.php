@@ -4,12 +4,8 @@ namespace App\Http\Resources\Api;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ConstructorResource extends JsonResource
+class TeamResource extends JsonResource
 {
-    /**
-     * @var mixed
-     */
-
     /**
      * Transform the resource into an array.
      *
@@ -19,11 +15,12 @@ class ConstructorResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->name,
-            'description' => $this->description,
-            'nation' => $this->nation,
-            'engine' => $this->engine,
+//            'name' => $this->name,
+            'principal' => $this->principal,
+            'engine' => $this->constructor->engine,
+            'entry' => $this->entry,
             'logo' => $this->logo,
+            'bg_image' => $this->bg_image,
             'created_by' => $this->creator->name,
             'updated_by' => $this->updater ? $this->updater->name : '-',
         ];
